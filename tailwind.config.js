@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "my-background": "url('/src/images/background-medical-hd.jpg')",
+      },
+      fontFamily: {
+        lora: ["Lora"],
+      },
+    },
   },
   plugins: [],
 };
