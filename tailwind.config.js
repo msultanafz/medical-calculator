@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "my-background": "url('/src/images/background-medical-hd.jpg')",
+        "my-background":
+          "url('/src/images/medical-background-123-transformed-transformed.jpeg')",
       },
       fontFamily: {
         lora: ["Lora"],

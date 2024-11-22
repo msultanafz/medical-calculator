@@ -12,35 +12,94 @@
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-my-background bg-cover bg-center">
+  <body class="min-h-screen bg-my-background bg-cover">
     <header class="flex items-center justify-between">
+      <!-- Logo dan Nama Sistem -->
       <div
-        class="flex space-x-5 items-center w-2/5 bg-black py-3 pl-4 rounded-br-full border-b-[1px] border-white bg-opacity-30 backdrop-blur-lg"
+        class="flex space-x-3 md:space-x-5 pr-8 items-center bg-black py-3 pl-4 rounded-br-full border-b-[1px] border-white bg-opacity-30 backdrop-blur-[2px]"
       >
-        <img src="../images/cropped_image (3).png" alt="" class="h-12" />
-        <h1 class="text-white text-4xl font-lora font-bold tracking-widest">
+        <img
+          src="../images/cropped_image (3).png"
+          alt=""
+          class="h-8 md:h-10 lg:h-12"
+        />
+        <h1
+          class="text-white text-xl sm:text-3xl lg:text-4xl font-lora font-bold tracking-widest"
+        >
           Medical Calculator
         </h1>
       </div>
-      <nav
-        class="flex items-center justify-evenly w-40 h-12 mr-6 bg-black rounded-3xl border-[1px] border-white"
-      >
-        <img
-          src="../images/support_agent_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
-          alt=""
-          class="h-8 hover:h-10 duration-300"
-        />
-        <img
-          src="../images/info_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
-          alt=""
-          class="h-8 hover:h-10 duration-300"
-        />
-        <img
-          src="../images/help_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
-          alt=""
-          class="h-8 hover:h-10 duration-300"
-        />
+
+      <!-- Navigasi Sistem -->
+      <nav>
+        <div
+          class="bg-black rounded-full p-1 mr-4 sm:hidden bg-opacity-30 backdrop-blur-[2px] border-[1px] border-white hover:scale-[1.15] duration-300"
+        >
+          <img
+            src="../images/menu_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            alt="menu"
+            title="Menu"
+            class="h-7 md:h-8"
+          />
+        </div>
+        <div
+          class="hidden sm:flex items-center justify-evenly w-44 h-10 lg:h-12 mr-6 bg-black bg-opacity-30 backdrop-blur-[2px] rounded-3xl border-[1px] border-white"
+        >
+          <img
+            src="../images/support_agent_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            alt="customer support"
+            title="Customer Support"
+            class="h-6 lg:h-8 hover:scale-[1.30] duration-300"
+          />
+          <img
+            src="../images/info_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            alt="info"
+            title="Info"
+            class="h-6 lg:h-8 hover:scale-[1.30] duration-300"
+          />
+          <img
+            src="../images/help_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            alt="help"
+            title="Help"
+            class="h-6 lg:h-8 hover:scale-[1.30] duration-300"
+          />
+        </div>
       </nav>
     </header>
+
+    <main>
+      <div class="flex">
+        <div
+          class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 text text-white bg-transparent rounded-lg shadow-sm shadow-white ml-10 lg:ml-16 mt-8 lg:mt-12"
+        >
+          <img
+            src="../images/bmi.jpg"
+            alt="gambar bmi"
+            class="h-24 lg:h-36 m-auto mt-2 mb-1 lg:mb-3 rounded-md"
+          />
+          <h3>Body Mass Index</h3>
+        </div>
+        <div
+          class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 lg:leading-6 text text-white bg-transparent rounded-lg shadow-sm shadow-white ml-12 lg:ml-16 mt-28 lg:mt-40"
+        >
+          <img
+            src="../images/potensi-tinggi-genetik.jpg"
+            alt="gambar ptg"
+            class="h-24 lg:h-36 m-auto mt-2 mb-1 rounded-md"
+          />
+          <h3>Potensi Tinggi genetik</h3>
+        </div>
+      </div>
+      <div
+        class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 text text-white bg-transparent rounded-lg shadow-sm shadow-white ml-10 lg:ml-16 pt-2 -mt-6 lg:-mt-16"
+      >
+        <img
+          src="../images/gambar-masa-kehamilan-transformed.png"
+          alt="gambar ptg"
+          class="h-24 lg:h-36 m-auto mb-1 lg:mb-3 rounded-md"
+        />
+        <h3>Masa Kehamilan</h3>
+      </div>
+    </main>
   </body>
 </html>
