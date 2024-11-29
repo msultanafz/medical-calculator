@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         lora: ["Lora"],
       },
+      animation: {
+        "ping-slow": "ping 1.5s infinite",
+      },
     },
   },
   plugins: [],

@@ -11,8 +11,21 @@
       href="https://fonts.googleapis.com/css2?family=Chango&family=Lora:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap"
       rel="stylesheet"
     />
+    <style>
+      /* Sembunyikan tombol panah di sisi kanan input number */
+      .no-spinner {
+        -webkit-appearance: none; /* Menghapus tampilan default di WebKit (Chrome, Safari) */
+        -moz-appearance: textfield; /* Menghapus tampilan default di Firefox */
+        appearance: none; /* Menambahkan properti standar */
+      }
+
+      .no-spinner::-webkit-inner-spin-button,
+      .no-spinner::-webkit-outer-spin-button {
+        display: none; /* Sembunyikan spinner */
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-my-background bg-cover">
+  <body class="min-h-screen bg-my-background bg-cover font-sans">
     <header class="flex items-center justify-between">
       <!-- Logo dan Nama Sistem -->
       <div
@@ -24,7 +37,7 @@
           class="h-8 md:h-10 lg:h-12"
         />
         <h1
-          class="text-white text-xl sm:text-3xl lg:text-4xl font-lora font-bold tracking-widest"
+          class="text-white cursor-default text-xl sm:text-3xl lg:text-4xl font-lora font-bold tracking-widest"
         >
           Medical Calculator
         </h1>
@@ -35,6 +48,7 @@
         <div
           class="bg-black rounded-full p-1 mr-4 sm:hidden bg-opacity-30 backdrop-blur-[2px] border-[1px] border-white hover:scale-[1.15] duration-300"
         >
+          <!-- Menu Button -->
           <img
             src="../images/menu_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             alt="menu"
@@ -45,18 +59,24 @@
         <div
           class="hidden sm:flex items-center justify-evenly w-44 h-10 lg:h-12 mr-6 bg-black bg-opacity-30 backdrop-blur-[2px] rounded-3xl border-[1px] border-white"
         >
+          <!-- Customer Support Button -->
           <img
             src="../images/support_agent_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             alt="customer support"
             title="Customer Support"
             class="h-6 lg:h-8 hover:scale-[1.30] duration-300"
+            onclick="window.open('https://wa.me/6282177423745?text=Halo,%20saya%20ingin%20bertanya!', '_blank')"
           />
+
+          <!-- Info Button -->
           <img
             src="../images/info_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             alt="info"
             title="Info"
             class="h-6 lg:h-8 hover:scale-[1.30] duration-300"
           />
+
+          <!-- Help Button -->
           <img
             src="../images/help_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             alt="help"
@@ -68,38 +88,155 @@
     </header>
 
     <main>
-      <div class="flex">
-        <div
-          class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 text text-white bg-transparent rounded-lg shadow-sm shadow-white ml-10 lg:ml-16 mt-8 lg:mt-12"
-        >
-          <img
-            src="../images/bmi.jpg"
-            alt="gambar bmi"
-            class="h-24 lg:h-36 m-auto mt-2 mb-1 lg:mb-3 rounded-md"
-          />
-          <h3>Body Mass Index</h3>
+      <div
+        class="flex absolute left-14 lg:left-20 top-24 lg:top-[7.4rem] items-center space-x-12 lg:space-x-16"
+      >
+        <!-- Body Mass Index -->
+        <div class="space-y-12">
+          <div
+            id="bmi-menu"
+            class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 text text-white bg-transparent rounded-lg shadow-sm shadow-white pt-2"
+          >
+            <img
+              src="../images/bmi.jpg"
+              alt="gambar bmi"
+              class="h-24 lg:h-36 m-auto mb-1 lg:mb-3 rounded-md"
+            />
+            <h3>Body Mass Index</h3>
+          </div>
+
+          <!-- Tinggi Potensi Genetik -->
+          <div
+            class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 lg:leading-6 text text-white bg-transparent rounded-lg shadow-sm shadow-white pt-2"
+          >
+            <img
+              src="../images/potensi-tinggi-genetik.jpg"
+              alt="gambar ptg"
+              class="h-24 lg:h-36 m-auto mb-1 rounded-md"
+            />
+            <h3>Tinggi Potensi Genetik</h3>
+          </div>
         </div>
+
+        <!-- Masa Kehamilan -->
         <div
-          class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 lg:leading-6 text text-white bg-transparent rounded-lg shadow-sm shadow-white ml-12 lg:ml-16 mt-28 lg:mt-40"
+          class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 text text-white bg-transparent rounded-lg shadow-sm shadow-white"
         >
           <img
-            src="../images/potensi-tinggi-genetik.jpg"
+            src="../images/gambar-masa-kehamilan-transformed.png"
             alt="gambar ptg"
-            class="h-24 lg:h-36 m-auto mt-2 mb-1 rounded-md"
+            class="h-24 lg:h-36 m-auto mb-1 lg:mb-3 mt-2 rounded-md"
           />
-          <h3>Potensi Tinggi genetik</h3>
+          <h3>Masa Kehamilan</h3>
         </div>
       </div>
+
+      <!-- pop up BMI -->
       <div
-        class="h-36 lg:h-52 w-28 lg:w-40 hover:scale-110 duration-300 text-center lg:text-xl leading-4 text text-white bg-transparent rounded-lg shadow-sm shadow-white ml-10 lg:ml-16 pt-2 -mt-6 lg:-mt-16"
+        id="bmi-popup"
+        class="fixed z-10 hidden inset-0 bg-black bg-opacity-70 backdrop-blur-[2px]"
       >
-        <img
-          src="../images/gambar-masa-kehamilan-transformed.png"
-          alt="gambar ptg"
-          class="h-24 lg:h-36 m-auto mb-1 lg:mb-3 rounded-md"
-        />
-        <h3>Masa Kehamilan</h3>
+        <div
+          class="relative inset-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 h-[18.7rem] w-56 lg:h-96 lg:w-80 rounded-xl shadow-md shadow-white opacity-70 bg-white pt-8 lg:pt-10"
+        >
+          <!-- Button Close -->
+          <img
+            id="close-popup"
+            src="../images/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
+            alt="close"
+            class="absolute h-6 lg:h-8 top-1 right-1 hover:scale-110 duration-300"
+            onclick=""
+          />
+          <h3
+            class="text-black text-xl lg:text-3xl font-bold tracking-wider mb-5 lg:mb-8 text-center"
+          >
+            Body Mass Index
+          </h3>
+
+          <!-- User Input -->
+          <form
+            action=""
+            class="w-full flex flex-col items-center space-y-4 lg:space-y-6"
+          >
+            <!-- Input BB -->
+            <div class="w-[70%]">
+              <label for="bb" class="text-sm lg:text-xl font-medium ml-1"
+                >Berat Badan</label
+              >
+              <div
+                class="flex items-center rounded-md bg-black text-white pr-2 pl-6 w-full"
+              >
+                <input
+                  type="number"
+                  id="bb"
+                  class="no-spinner flex-1 w-full focus:outline-none rounded-md bg-black border-2 border-black text-white px-2 lg:text-xl text-center"
+                />
+                <span class="text-sm lg:text-xl">Kg</span>
+              </div>
+            </div>
+
+            <!-- Input TB -->
+            <div class="w-[70%]">
+              <label for="tb" class="text-sm lg:text-xl font-medium ml-1"
+                >Tinggi Badan</label
+              >
+              <div
+                class="flex items-center rounded-md bg-black text-white pr-2 pl-8 w-full mb-5 lg:mb-6"
+              >
+                <input
+                  type="number"
+                  id="tb"
+                  class="no-spinner flex-1 w-full focus:outline-none rounded-md bg-black border-2 border-black text-white px-2 lg:text-xl text-center"
+                />
+                <span class="text-sm lg:text-xl">Cm</span>
+              </div>
+            </div>
+
+            <!-- Button Hitung -->
+            <button
+              id="hitung"
+              class="block bg-black text-white px-5 py-1 rounded-2xl lg:text-xl font-semibold tracking-wide hover:scale-105 duration-300"
+            >
+              Hitung
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Pop Up Hasil -->
+      <div
+        id="popup-hasil"
+        class="fixed z-20 hidden inset-0 bg-black bg-opacity-80 backdrop-blur-[2px]"
+      >
+        <div
+          class="relative flex flex-col justify-between items-center inset-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 h-56 w-[17rem] lg:h-96 lg:w-80 rounded-xl shadow-md shadow-white opacity-70 bg-white overflow-hidden pb-5"
+        >
+          <!-- Output Hasil -->
+          <div
+            class="text-center text-lg font-semibold bg-blue-500 w-full py-2"
+          >
+            <span>Anda berada pada kategori</span> <br />
+
+            <span id="kategori" class="font-bold">Berat Badan Normal</span>
+          </div>
+
+          <!-- Animasi Sesuai Kategori -->
+          <img
+            id="img-kategori"
+            src="../images/thumb_up_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.png"
+            class="h-12 animate-ping-slow ease-in-out"
+          />
+
+          <!-- Button Lanjut -->
+          <button
+            id="hitung"
+            class="block bg-black text-white px-5 py-1 rounded-2xl lg:text-xl font-semibold tracking-wide hover:scale-105 duration-300"
+          >
+            Lanjut
+          </button>
+        </div>
       </div>
     </main>
   </body>
+  <script src="../js/body_mass_index.js"></script>
 </html>
