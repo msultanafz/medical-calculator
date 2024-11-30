@@ -1,41 +1,41 @@
 // Mendapatkan elemen-elemen penting
-const bmiMenu = document.getElementById("bmi-menu");
-const bmiPopup = document.getElementById("bmi-popup");
+const imtMenu = document.getElementById("imt-menu");
+const imtInput = document.getElementById("imt-input");
 const closePopup = document.getElementById("close-popup");
 const hitungButton = document.getElementById("hitung");
-const bmiPopupResult = document.getElementById("popup-hasil"); // Pop-up hasil
+const imtInputResult = document.getElementById("imt-output");
 const kategoriSpan = document.getElementById("kategori");
-const lanjutButton = bmiPopupResult.querySelector("button");
+const lanjutButton = document.getElementById("lanjut");
 
-// Fungsi untuk menghitung BMI
-function calculateBMI(weight, height) {
+// Fungsi untuk menghitung IMT
+function calculateImt(weight, height) {
   return weight / (height * height);
 }
 
 // Fungsi untuk menentukan kategori dan warna background
-function getBMICategory(bmi) {
-  if (bmi < 18.5)
+function getImtCategory(imt) {
+  if (imt < 18.5)
     return { category: "Berat Badan Kurang", color: "bg-yellow-500" };
-  if (bmi < 25) return { category: "Berat Badan Normal", color: "bg-blue-500" };
-  if (bmi < 30)
+  if (imt < 25) return { category: "Berat Badan Normal", color: "bg-blue-500" };
+  if (imt < 30)
     return { category: "Berat Badan Berlebih", color: "bg-orange-500" };
-  if (bmi < 35)
+  if (imt < 35)
     return { category: "Obesitas Tingkat 1", color: "bg-orange-500" };
-  if (bmi < 40) return { category: "Obesitas Tingkat 2", color: "bg-red-500" };
+  if (imt < 40) return { category: "Obesitas Tingkat 2", color: "bg-red-500" };
   return { category: "Obesitas Tingkat 3 (Parah)", color: "bg-red-500" };
 }
 
-// Event untuk menampilkan pop-up BMI
-bmiMenu.addEventListener("click", () => {
-  bmiPopup.classList.remove("hidden");
+// Event untuk menampilkan pop-up IMT
+imtMenu.addEventListener("click", () => {
+  imtInput.classList.remove("hidden");
 });
 
-// Event untuk menutup pop-up BMI
+// Event untuk menutup pop-up IMT
 closePopup.addEventListener("click", () => {
-  bmiPopup.classList.add("hidden");
+  imtInput.classList.add("hidden");
 });
 
-// Event untuk menghitung BMI dan menampilkan pop-up hasil
+// Event untuk menghitung IMT dan menampilkan pop-up hasil
 hitungButton.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -49,16 +49,16 @@ hitungButton.addEventListener("click", (e) => {
     return;
   }
 
-  // Hitung BMI
-  const bmi = calculateBMI(weight, heightM);
-  const { category, color } = getBMICategory(bmi);
+  // Hitung IMT
+  const imt = calculateImt(weight, heightM);
+  const { category, color } = getImtCategory(imt);
 
   // Update tampilan pop-up hasil
   kategoriSpan.textContent = category;
 
   // Update warna background sesuai kategori
-  const outputDiv = bmiPopupResult.querySelector(".text-center");
-  outputDiv.className = `text-center text-lg font-semibold w-full py-2 ${color}`;
+  const outputDiv = document.getElementById("hasil");
+  outputDiv.className = `text-center font-semibold w-full py-2 ${color}`;
 
   // Update animasi
   const animasi = document.getElementById("img-kategori");
@@ -76,14 +76,14 @@ hitungButton.addEventListener("click", (e) => {
   }
 
   // Tampilkan pop-up hasil
-  bmiPopup.classList.add("hidden");
-  bmiPopupResult.classList.remove("hidden");
+  imtInput.classList.add("hidden");
+  imtInputResult.classList.remove("hidden");
 });
 
 // Event untuk tombol Lanjut
 lanjutButton.addEventListener("click", () => {
-  bmiPopupResult.classList.add("hidden");
-  bmiPopup.classList.remove("hidden");
+  imtInputResult.classList.add("hidden");
+  imtInput.classList.remove("hidden");
   document.getElementById("bb").value = ""; // Reset berat badan
   document.getElementById("tb").value = ""; // Reset tinggi badan
 });
