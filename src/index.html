@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Medical Calculator</title>
-    <link rel="stylesheet" href="../styles/output.css" />
+    <link rel="stylesheet" href="./output.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,14 +25,14 @@
       }
     </style>
   </head>
-  <body class="min-h-screen bg-my-background bg-cover font-sans">
+  <body class="bg-my-background bg-cover min-h-screen font-sans">
     <header class="flex">
       <!-- Logo dan Nama Sistem -->
       <div
         class="flex space-x-3 md:space-x-5 pr-8 items-center bg-black py-2 pl-4 rounded-br-full border-b-[1px] border-white bg-opacity-30 backdrop-blur-[2px]"
       >
         <img
-          src="../images/cropped_image (3).png"
+          src="./images/cropped_image (3).png"
           alt=""
           class="h-8 md:h-10 lg:h-12"
         />
@@ -50,7 +50,7 @@
           class="bg-black flex flex-col items-center rounded-full sm:hidden p-[0.30rem] mr-3 bg-opacity-30 backdrop-blur-[2px] border-[1px] border-white"
         >
           <img
-            src="../images/menu_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            src="./images/menu_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             alt="menu"
             title="Menu"
             class="h-6 hover:scale-[1.15] duration-300 transition-transform"
@@ -60,7 +60,7 @@
           <!-- Drop Menu -->
           <div class="hidden space-y-2 mt-2" id="dropMenu">
             <img
-              src="../images/support_agent_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+              src="./images/support_agent_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
               alt="customer support"
               title="Customer Support"
               class="h-6 hover:scale-[1.30] duration-300 hidden opacity-0 transform -translate-y-2 transition-all"
@@ -68,21 +68,21 @@
               onclick="window.open('https://wa.me/6282177423745?text=Halo,%20saya%20ingin%20bertanya!', '_blank')"
             />
             <img
-              src="../images/info_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+              src="./images/info_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
               alt="info"
               title="Info"
               class="h-6 hover:scale-[1.30] duration-300 hidden opacity-0 transform -translate-y-2 transition-all"
               id="infoButton1"
             />
             <img
-              src="../images/help_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+              src="./images/help_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
               alt="help"
               title="Help"
               class="h-6 hover:scale-[1.30] duration-300 hidden opacity-0 transform -translate-y-2 transition-all"
               id="helpButton1"
             />
           </div>
-          <script src="../js/hamburger-menu.js"></script>
+          <script src="./js/hamburger-menu.js"></script>
         </div>
 
         <!-- Menu if layar > sm -->
@@ -91,7 +91,7 @@
         >
           <!-- Customer Support Button -->
           <img
-            src="../images/support_agent_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            src="./images/support_agent_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             alt="customer support"
             title="Customer Support"
             class="h-6 lg:h-8 hover:scale-[1.30] duration-300"
@@ -100,7 +100,7 @@
 
           <!-- Info Button -->
           <img
-            src="../images/info_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            src="./images/info_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             id="infoButton"
             alt="info"
             title="Info"
@@ -109,7 +109,7 @@
 
           <!-- Help Button -->
           <img
-            src="../images/help_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
+            src="./images/help_40dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png"
             id="helpButton"
             alt="help"
             title="Help"
@@ -130,7 +130,7 @@
               <!-- Button Close -->
               <img
                 id="closeInfoButton"
-                src="../images/cancel_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+                src="./images/cancel_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
                 alt="close"
                 class="sticky top-2 left-[90%] h-6 sm:h-7 lg:h-8 hover:scale-110 duration-300 cursor-pointer bg-black rounded-full"
               />
@@ -207,7 +207,7 @@
                   >Mulai perjalanan kesehatan Anda bersama kami!</span
                 >
               </p>
-              <script src="../js/info.js"></script>
+              <script src="./js/info.js"></script>
             </div>
           </div>
 
@@ -222,7 +222,7 @@
               <!-- Button Close -->
               <img
                 id="closeHelpButton"
-                src="../images/cancel_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+                src="./images/cancel_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
                 alt="close"
                 class="sticky top-2 left-[90%] h-6 sm:h-7 lg:h-8 hover:scale-110 duration-300 cursor-pointer bg-black rounded-full"
               />
@@ -308,7 +308,7 @@
                 lebih lanjut mengenai kesehatan Anda, sebaiknya berkonsultasi
                 dengan dokter atau tenaga medis profesional.
               </p>
-              <script src="../js/help.js"></script>
+              <script src="./js/help.js"></script>
             </div>
           </div>
         </div>
@@ -327,7 +327,7 @@
             class="h-[9.5rem] sm:h-52 lg:h-[17rem] w-28 sm:w-40 lg:w-52 hover:scale-110 duration-300 text-center sm:text-xl lg:text-2xl leading-5 sm:leading-6 text text-white cursor-pointer bg-black bg-opacity-30 sm:bg-opacity-50 font-semibold rounded-lg shadow-sm shadow-white pt-2"
           >
             <img
-              src="../images/bmi.jpg"
+              src="./images/bmi.jpg"
               alt="gambar imt"
               class="h-24 sm:h-36 lg:h-48 m-auto mb-1 rounded-md"
             />
@@ -339,7 +339,7 @@
             class="h-[9.5rem] sm:hidden w-28 hover:scale-110 duration-300 text-center leading-5 text-white cursor-pointer bg-black bg-opacity-30 sm:bg-opacity-50 font-semibold rounded-lg shadow-sm shadow-white pt-2"
           >
             <img
-              src="../images/potensi-tinggi-genetik.jpg"
+              src="./images/potensi-tinggi-genetik.jpg"
               alt="gambar ptg"
               class="h-24 m-auto mb-1 rounded-md"
             />
@@ -353,7 +353,7 @@
             class="h-[9.5rem] hidden sm:block sm:h-52 lg:h-[17rem] w-28 sm:w-40 lg:w-52 hover:scale-110 duration-300 text-center sm:text-xl lg:text-2xl sm:leading-6 text-white cursor-pointer bg-black bg-opacity-30 sm:bg-opacity-50 font-semibold rounded-lg shadow-sm shadow-white pt-2"
           >
             <img
-              src="../images/potensi-tinggi-genetik.jpg"
+              src="./images/potensi-tinggi-genetik.jpg"
               alt="gambar ptg"
               class="h-24 sm:h-36 lg:h-48 m-auto mb-1 rounded-md"
             />
@@ -367,7 +367,7 @@
             class="h-[9.5rem] sm:h-52 lg:h-[17rem] w-28 sm:w-40 lg:w-52 hover:scale-110 duration-300 text-center sm:text-xl lg:text-2xl leading-5 text-white cursor-pointer bg-black bg-opacity-30 sm:bg-opacity-50 font-semibold rounded-lg shadow-sm shadow-white pt-2"
           >
             <img
-              src="../images/gambar-masa-kehamilan-transformed.png"
+              src="./images/gambar-masa-kehamilan-transformed.png"
               alt="gambar ptg"
               class="h-24 sm:h-36 lg:h-48 m-auto mb-1 sm:mb-3 lg:mb-4 rounded-md"
             />
@@ -389,7 +389,7 @@
             <!-- Button Close -->
             <img
               id="close-popup"
-              src="../images/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
+              src="./images/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
               alt="close"
               class="absolute h-6 sm:h-7 lg:h-8 top-1 right-1 hover:scale-110 duration-300 cursor-pointer"
             />
@@ -478,7 +478,7 @@
             <!-- Animasi Sesuai Kategori -->
             <img
               id="img-kategori"
-              src="../images/thumb_up_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.png"
+              src="./images/thumb_up_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.png"
               class="h-10 sm:h-12 lg:h-14 animate-ping-slow ease-in-out"
             />
 
@@ -494,5 +494,5 @@
       </div>
     </main>
   </body>
-  <script src="../js/body_mass_index.js"></script>
+  <script src="./js/body_mass_index.js"></script>
 </html>

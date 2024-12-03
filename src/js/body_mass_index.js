@@ -66,13 +66,13 @@ hitungButton.addEventListener("click", (e) => {
     category === "Berat Badan Kurang" ||
     category === "Berat Badan Berlebih"
   ) {
-    animasi.src = "../images/kurang-lebih.png";
+    animasi.src = "./images/kurang-lebih.png";
   } else if (category === "Berat Badan Normal") {
-    animasi.src = "../images/normal.png";
+    animasi.src = "./images/normal.png";
   } else if (category === "Obesitas Tingkat 1") {
-    animasi.src = "../images/ob-tingkat1.png";
+    animasi.src = "./images/ob-tingkat1.png";
   } else {
-    animasi.src = "../images/ob-tingkat2-3.png";
+    animasi.src = "./images/ob-tingkat2-3.png";
   }
 
   // Tampilkan pop-up hasil

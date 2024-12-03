@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js}", "./public/**/*.html"],
   theme: {
     extend: {
       backgroundImage: {
-        "my-background": "url('/src/images/medical-background.jpg')",
+        "my-background": "url('/img/medical-background.jpg')",
       },
       fontFamily: {
         lora: ["Lora"],
